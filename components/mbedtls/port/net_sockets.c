@@ -51,6 +51,10 @@
 #include <time.h>
 #include <stdint.h>
 
+#define read(fd,buf,len)        recv( fd, (char*)( buf ), (int)( len ), 0 )
+#define write(fd,buf,len)       send( fd, (char*)( buf ), (int)( len ), 0 )
+#define close(fd)               closesocket(fd)
+
 /*
  * Prepare for using the sockets interface
  */
